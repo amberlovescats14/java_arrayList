@@ -1,24 +1,26 @@
 package com.amber;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Phone {
-    private ArrayList<String> phoneBook = new ArrayList<String>();
+    private ArrayList<String> phoneNumbers = new ArrayList<String>();
 
     //@ADD
-    public void addNumber(String newNumber){
-        phoneBook.add(newNumber);
+    public void addNumber() throws IllegalAccessException {
+        Scanner scan = new Scanner(System.in);
+        String newNumber = scan.nextLine();
+        if(newNumber.equals("")) throw new IllegalAccessException("Number cannot be blank");
+        phoneNumbers.add(newNumber);
         System.out.println("New number added.");
     }
     //@does this contain
     private boolean containing(String number){
-       return phoneBook.contains(number);
+       return phoneNumbers.contains(number);
 
     }
     //@ MODIFY
-    public void modify(){
+    public void modifyNumber(){
         Scanner scan = new Scanner(System.in);
         while(true){
             System.out.print("Please enter the number to modify: ");
@@ -26,8 +28,8 @@ public class Phone {
             if(containing(currentNumber)){
                 System.out.print("Enter updated number: ");
                 String newNumber = scan.nextLine();
-                int index = phoneBook.indexOf(currentNumber);
-                phoneBook.set(index, newNumber);
+                int index = phoneNumbers.indexOf(currentNumber);
+                phoneNumbers.set(index, newNumber);
                 System.out.println("Number Updated!");
                 break;
             }
@@ -35,14 +37,14 @@ public class Phone {
         }
     }
 
-    public void remove(){
+    public void removeNumber(){
         Scanner scan = new Scanner(System.in);
         while (true){
             System.out.print("Please enter the number to delete: ");
         String currentNumber = scan.nextLine();
             if(containing(currentNumber)){
-                int index = phoneBook.indexOf(currentNumber);
-                phoneBook.remove(index);
+                int index = phoneNumbers.indexOf(currentNumber);
+                phoneNumbers.remove(index);
                 System.out.println("Number Deleted");
                 break;
             }
@@ -50,7 +52,7 @@ public class Phone {
         }
     }
 
-    public ArrayList<String> getPhoneBook() {
-        return phoneBook;
+    public ArrayList<String> getPhoneNumbers() {
+        return phoneNumbers;
     }
 }

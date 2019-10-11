@@ -6,8 +6,8 @@ public class Main {
         var myPhoneBook = new Phone();
         myPhoneBook.addNumber("210-429-6474");
         myPhoneBook.addNumber("210-705-9770");
-        myPhoneBook.modify();
-        myPhoneBook.remove();
-        System.out.println(myPhoneBook.getPhoneBook());
+        myPhoneBook.modifyNumber();
+        myPhoneBook.removeNumber();
+        System.out.println(myPhoneBook.getPhoneNumbers());
     }
 }
