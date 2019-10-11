@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Contacts extends Phone {
     private ArrayList<String> names = new ArrayList<String>();
+    private ArrayList<String> numbers = new ArrayList<String>();
 
     //add
     public void addContact() throws IllegalAccessException {
@@ -51,6 +52,14 @@ public class Contacts extends Phone {
             }
             System.out.println("404 Contact not found");
         }
+    }
+
+    public void getPhoneBook(){
+        this.numbers = getPhoneNumbers();
+        for(int i=0; i<names.size(); i++){
+            System.out.println("Name: " + names.get(i) + ", Number: " + numbers.get(i));
+        }
+
     }
 
 }

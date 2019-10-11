@@ -8,5 +8,7 @@ public class Main {
         myPhoneBook.addContact();
         myPhoneBook.modifyName();
         myPhoneBook.addContact();
+        myPhoneBook.removeContact();
+        myPhoneBook.getPhoneBook();
     }
 }
