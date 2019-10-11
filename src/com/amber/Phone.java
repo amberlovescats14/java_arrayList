@@ -9,13 +9,14 @@ public class Phone {
     //@ADD
     public void addNumber() throws IllegalAccessException {
         Scanner scan = new Scanner(System.in);
+        System.out.print("Number:");
         String newNumber = scan.nextLine();
         if(newNumber.equals("")) throw new IllegalAccessException("Number cannot be blank");
         phoneNumbers.add(newNumber);
-        System.out.println("New number added.");
+        System.out.println("Succesfully added!");
     }
     //@does this contain
-    private boolean containing(String number){
+    private boolean containingNumber(String number){
        return phoneNumbers.contains(number);
 
     }
@@ -25,7 +26,7 @@ public class Phone {
         while(true){
             System.out.print("Please enter the number to modify: ");
             String currentNumber = scan.nextLine();
-            if(containing(currentNumber)){
+            if(containingNumber(currentNumber)){
                 System.out.print("Enter updated number: ");
                 String newNumber = scan.nextLine();
                 int index = phoneNumbers.indexOf(currentNumber);
@@ -37,19 +38,8 @@ public class Phone {
         }
     }
 
-    public void removeNumber(){
-        Scanner scan = new Scanner(System.in);
-        while (true){
-            System.out.print("Please enter the number to delete: ");
-        String currentNumber = scan.nextLine();
-            if(containing(currentNumber)){
-                int index = phoneNumbers.indexOf(currentNumber);
-                phoneNumbers.remove(index);
-                System.out.println("Number Deleted");
-                break;
-            }
-            System.out.println("404 Number Not found");
-        }
+    public void removeNumber(int index){
+        phoneNumbers.remove(index);
     }
 
     public ArrayList<String> getPhoneNumbers() {
