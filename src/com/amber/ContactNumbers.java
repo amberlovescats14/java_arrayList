@@ -3,7 +3,7 @@ package com.amber;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Phone {
+public class ContactNumbers {
     private ArrayList<String> phoneNumbers = new ArrayList<String>();
 
     //@ADD
