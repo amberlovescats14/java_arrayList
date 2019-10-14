@@ -7,6 +7,7 @@ public class ContactNames extends ContactNumbers {
     private ArrayList<String> names = new ArrayList<String>();
     private ArrayList<String> numbers = new ArrayList<String>();
 
+
     //add
     public void addContact() throws IllegalAccessException {
         System.out.println("___New Contact___");
@@ -53,7 +54,7 @@ public class ContactNames extends ContactNumbers {
             System.out.println("404 Contact not found");
         }
     }
-
+    // read
     public void getPhoneBook(){
         this.numbers = getPhoneNumbers();
         for(int i=0; i<names.size(); i++){

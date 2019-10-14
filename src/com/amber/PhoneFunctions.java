@@ -3,17 +3,19 @@ package com.amber;
 import java.util.Scanner;
 
 public class PhoneFunctions {
-    public  String menuItems(){
+    private String menuItems(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Press 1 to add");
-        System.out.println("Press 2 to edit");
-        System.out.println("Press 3 to delete");
-        System.out.println("Press 4 to see the phone book");
+        System.out.println("Press 2 to edit contact Name");
+        System.out.println("Press 3 to edit contact Number");
+        System.out.println("Press 4 to delete");
+        System.out.println("Press 5 to see the phone book");
         return scan.nextLine();
     }
 
 
-    public  void phoneFunction(ContactNames obj) throws IllegalAccessException {
+    public void phoneFunction(UserPhone obj) throws IllegalAccessException {
+        System.out.println("Welcome " + obj.getFullName());
         Scanner scan = new Scanner(System.in);
         while(true){
             String menuChoice = menuItems();
@@ -25,9 +27,12 @@ public class PhoneFunctions {
                     obj.modifyName();
                     break;
                 case "3":
-                    obj.removeContact();
+                    obj.modifyNumber();
                     break;
                 case "4":
+                    obj.removeContact();
+                    break;
+                case "5":
                     obj.getPhoneBook();
                     break;
                 default:
